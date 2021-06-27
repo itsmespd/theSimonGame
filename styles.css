@@ -1,16 +1,47 @@
 body {
-  text-align: center;
   background-color: #011F3F;
 }
 
+.howToPlay
+{
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  margin:  5%;
+  color: #FEF2BF;
+}
+
 #level-title {
+  text-align: center;
   font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
   margin:  5%;
   color: #FEF2BF;
 }
 
+.row
+{
+  margin: 0;
+}
+
+.container-fluid
+{
+  font-family: 'Press Start 2P', cursive;
+  color: #FEF2BF;
+  margin: 25px;
+}
+
+#rules
+{
+  text-decoration: none;
+  color: #FEF2BF;
+}
+
+#rules:hover {
+  color: hotpink;
+}
+
 .container {
+  text-align: center;
   display: block;
   width: 50%;
   margin: auto;

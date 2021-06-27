@@ -4,19 +4,34 @@
 <head>
   <meta charset="utf-8">
   <title>Simon</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
   <link rel="stylesheet" href="styles.css">
+
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
 
 <body>
   <h1 id="level-title">The Simon Game</h1>
-
-  <div class="container">
+  <!------------------------------ Header container ------------------------------>
+  <div class="container-fluid">
     <div class="row justify-content-center">
-      <button id="start" class="start-btn">Start</button>
+      <div class="col-4">
+        <a id="rules" href="rules.html" onclick="return !window.open(this.href, 'width=500,height=500')" target="_blank">How To Play</a>
+      </div>
+
+      <div class="col-4">
+        <button id="start" class="start-btn">Start</button>
+      </div>
+
+      <div class="col-4">
+        <p>Highscore: <span id="level"></span></p>
+      </div>
+
     </div>  
   </div>
-
+<!------------------------------ Buttons container ------------------------------>
   <div class="container">
     <div class="row justify-content-center">
 
@@ -41,6 +56,7 @@
     </div>
 
   </div>
+<!------------------------------------------------------------------------------------>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="game.js" charset="utf-8"></script>

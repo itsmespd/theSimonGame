@@ -7,9 +7,13 @@ var userClickedPattern = [];
 var started = false;
 var level = 0;
 
+var lastLevel;
+
 $("#start").click(function() {
   if (!started) {
+    animateStartPress("start");
     $("#level-title").text("Level " + level);
+    $("#start").text("Game Running").prop('disabled', true);
     nextSequence();
     started = true;
   }
@@ -38,11 +42,13 @@ function checkAnswer(currentLevel) {
       playSound("wrong");
       $("body").addClass("game-over");
       $("#level-title").text("Game Over, Press the Start button to Restart");
+      $("#start").text("Start").prop('disabled', false);
 
       setTimeout(function () {
         $("body").removeClass("game-over");
       }, 200);
-
+      lastLevel=level;
+      $("#level").text(lastLevel);
       startOver();
     }
 }
@@ -64,6 +70,13 @@ function animatePress(currentColor) {
   $("#" + currentColor).addClass("pressed");
   setTimeout(function () {
     $("#" + currentColor).removeClass("pressed");
+  }, 100);
+}
+
+function animateStartPress(starrtBtnId) {
+  $("#" + starrtBtnId).addClass("pressed");
+  setTimeout(function () {
+    $("#" + starrtBtnId).removeClass("pressed");
   }, 100);
 }
 
